@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    Note right of browser: Client submits new note with POST request
+    server-->>browser: Status code 201 Created
+    deactivate server
+    Note right of browser: Submitted JSON is appended to the notes list and is rendered by the fetched JS
